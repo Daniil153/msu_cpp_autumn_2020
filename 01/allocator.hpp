@@ -1,3 +1,4 @@
+#pragma once(ifdef)
 #include <iostream>
 #include <cstdio>
 
