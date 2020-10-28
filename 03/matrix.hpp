@@ -46,7 +46,7 @@ public:
         }
         return Matrix_Proxy(matrix[i], Columns);
     }
-    Matrix_Proxy operator [] (size_t i) const {
+    const Matrix_Proxy operator [] (size_t i) const {
         if (i >= Rows) {
             throw std::out_of_range("Error []");
         }
