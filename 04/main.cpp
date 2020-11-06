@@ -70,12 +70,35 @@ void test5() {
     assert(-a == ans2);
 }
 
+
+void test6() {
+    std::cout << "Test6():" << std::endl;
+    BigInt a("999999999999");
+    assert(-a == BigInt("-999999999999"));
+    assert(BigInt(5) - a == BigInt("-999999999994"));
+    assert(a-BigInt(5) == BigInt("999999999994"));
+    assert(a+1 == BigInt("1000000000000"));
+    assert(a-1 == BigInt("999999999998"));
+    assert(BigInt(1)-a == BigInt("-999999999998"));
+    std::cout << BigInt(1) + a << std::endl;
+    assert(BigInt(1) + a == BigInt("1000000000000"));
+    BigInt b = -a;
+    assert(b == BigInt("-999999999999"));
+    assert(b - 5 == BigInt("-1000000000004"));
+    assert(b + 5 == BigInt("-999999999994"));
+    assert(BigInt(5) + b == BigInt("-999999999994"));
+    assert(BigInt(-5) + b == BigInt("-1000000000004"));
+    assert(BigInt(5) - b == BigInt("1000000000004"));
+    assert(BigInt(-5) - b == BigInt("999999999994"));
+}
+
 int main() {
     test1();
     test2();
     test3();
     test4();
     test5();
+    test6();
     std::cout << "Все тесты пройдены" << std::endl;
     return 0;
 }
