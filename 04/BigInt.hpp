@@ -20,7 +20,7 @@ public:
         }
         new_size = 1;
         data = new unsigned int [1];
-        data[0] = value;
+        data[0] = sign * value;
     }
     BigInt(const std::string &s, size_t ssize=0) {
         int t = 0;
