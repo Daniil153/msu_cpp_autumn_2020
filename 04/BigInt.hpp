@@ -199,7 +199,7 @@ public:
         }
     }
     BigInt f(const BigInt &self, const BigInt &m) const {
-        BigInt temp(*self);
+        BigInt temp(self);
         unsigned int ost = 0;
         for (size_t i = 0; i < self.new_size; i++) {
             unsigned int p1 = 0;
