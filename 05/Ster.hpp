@@ -36,7 +36,7 @@ public:
 
     Error process(uint64_t arg)
     {
-        out << std::to_string(arg) << Separator;
+        out << arg << Separator;
         return Error::NoError;
     }
 
@@ -84,7 +84,7 @@ public:
         inp >> temp;
         try {
             arg = std::stoull(temp);
-        } catch (...) {
+        } catch (std::logic_error&) {
             return Error::CorruptedArchive;
         }
         return Error::NoError;
