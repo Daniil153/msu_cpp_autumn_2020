@@ -18,7 +18,7 @@ public:
         return object.serialize(*this);
     }
 
-    template<typename T>
+    template<class T>
     Error process(T& elem)
     {
         return Error::CorruptedArchive;
